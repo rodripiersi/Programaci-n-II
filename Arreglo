@@ -1,0 +1,12 @@
+arreglo = []  # Lista vacía
+
+
+#Ejemplo 1
+for i in range(0, n):  
+    valor = float(input(f"Ingresá un valor para x^{i}: "))
+    arreglo.append(valor)
+
+#Ejemplo 2
+for i in range(n, -1, -1):
+        valor = float(input(f"Ingresá un valor para x^{i}: "))
+        arreglo.append(valor)
