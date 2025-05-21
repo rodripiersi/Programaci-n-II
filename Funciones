@@ -1,0 +1,19 @@
+import tkinter as tk                        # Importa Tkinter para crear la interfaz
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+import matplotlib.pyplot as plt             # Importa matplotlib para graficar
+import numpy as np                          # Importa numpy para cálculos matemáticos
+
+
+#Polinomicas
+fig, ax = plt.subplots()                # Crea una figura y ejes para el gráfico
+x = np.linspace(-10, 10, 400)           # Genera 400 puntos entre -10 y 10 para el eje X
+ax.set_ylim(-10, 10)                    # Configurar eje Y también de -10 a 10
+y = np.polyval(coeficientes, x)         # Evalúa el polinomio para cada valor de x
+
+ax.plot(x, y)                           # Dibuja la curva y=f(x)
+
+# Inserta el gráfico en la interfaz Tkinter
+canvas = FigureCanvasTkAgg(fig, master=ventana)
+canvas.draw()                           # Dibuja la figura
+canvas.get_tk_widget().pack()           # Empaqueta el widget del gráfico en la ventana
+
